@@ -1,12 +1,21 @@
 .HeaderLogoWrapper {
     margin: 0 auto;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
     max-width: 100%;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
-  background: url(../images/te_papa_bg_large.jpg);
+  background: url(../images/te_papa_bg_large.jpg) no-repeat center center fixed;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
 }
 
 .level-toggle {
@@ -22,13 +31,19 @@ body {
   text-align: center;
   padding: 15px;
   margin-top: 35px;
+  transition-duration: 0.4s;
+}
+
+.level-toggle:hover {
+  background-color: #78A334;
+  color: white;
 }
 
 .level-content {
   display: none;
   width: 100%;
   background: white;
-  padding: 40px;
+  padding: 20px;
   font-family: open sans, sans-serif;
 }
 
