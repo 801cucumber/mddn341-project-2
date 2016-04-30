@@ -30,7 +30,7 @@
             <section>
               <div class="parent">
                 <div class="panzoom">
-                  <img src="images/level_1_map.jpg" width="2016" height="1522">
+                  <img id="level1-map" width="2016" height="1522">
                 </div>
               </div>
               <div class="buttons">
@@ -123,9 +123,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script src="js/jquery.panzoom.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="js/site.js"></script>
   <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-  <script>var myDataRef = new Firebase('https://mddn352-project-2.firebaseio.com/');</script>
+  <script src="js/site.js"></script>
+  <script>
+    $.ajax({
+      type: 'get',
+      dataType: 'jsonp',
+      url: 'https://mddn352-project-2.firebaseio.com/rest/maps.json',
+      success: function(data) {
+        $('#level1-map').attr('src', data.level1);
+      }
+    });
+  </script>
   <script>
     (function() {
       var $section = $('section').first();
