@@ -28,7 +28,7 @@
         <div id="level1-content" class="level-content">
           <h1><b>WHAT'S ON THE <font color="#78A334">FIRST FLOOR?</font></b></h1>
           <center>
-            <section>
+            <section id="l1-m">
               <div class="parent">
                 <div class="panzoom">
                   <img id="level1-map" style="max-width: 800px;" orgWidth="1193" orgHeight="1256" usemap="#level1-map">
@@ -59,7 +59,7 @@
         <div id="level2-content" class="level-content">
           <h1><b>WHAT'S ON THE <font color="#78A334">SECOND FLOOR?</font></b></h1>
           <center>
-            <section>
+            <section id="l2-m">
               <div class="parent">
                 <div class="panzoom">
                   <img id="level2-map" style="max-width: 800px;">
@@ -85,9 +85,21 @@
 
         <div id="level3-content" class="level-content">
           <h1><b>WHAT'S ON THE <font color="#78A334">THIRD FLOOR?</font></b></h1>
-            <center>
-              <img id="level3-map" style="max-width: 800px;">
-            </center>
+          <center>
+            <section id="l3-m">
+              <div class="parent">
+                <div class="panzoom">
+                  <img id="level3-map" style="max-width: 800px;">
+                </div>
+              </div>
+              <div class="buttons">
+                <button class="zoom-in">Zoom In</button>
+                <button class="zoom-out">Zoom Out</button>
+                <input type="range" class="zoom-range">
+                <button class="reset">Reset</button>
+              </div>
+            </section>
+          </center>
         </div>
       </div>
 
@@ -100,9 +112,21 @@
 
         <div id="level4-content" class="level-content">
           <h1><b>WHAT'S ON THE <font color="#78A334">FOURTH FLOOR?</font></b></h1>
-            <center>
-              <img id="level4-map" style="max-width: 800px;">
-            </center>
+          <center>
+            <section id="l4-m">
+              <div class="parent">
+                <div class="panzoom">
+                  <img id="level4-map" style="max-width: 800px;">
+                </div>
+              </div>
+              <div class="buttons">
+                <button class="zoom-in">Zoom In</button>
+                <button class="zoom-out">Zoom Out</button>
+                <input type="range" class="zoom-range">
+                <button class="reset">Reset</button>
+              </div>
+            </section>
+          </center>
         </div>
       </div>
 
@@ -115,9 +139,21 @@
 
         <div id="level5-content" class="level-content">
           <h1><b>WHAT'S ON THE <font color="#78A334">FIFTH FLOOR?</font></b></h1>
-            <center>
-              <img id="level5-map" style="max-width: 800px;">
-            </center>
+          <center>
+            <section id="l5-m">
+              <div class="parent">
+                <div class="panzoom">
+                  <img id="level5-map" style="max-width: 800px;">
+                </div>
+              </div>
+              <div class="buttons">
+                <button class="zoom-in">Zoom In</button>
+                <button class="zoom-out">Zoom Out</button>
+                <input type="range" class="zoom-range">
+                <button class="reset">Reset</button>
+              </div>
+            </section>
+          </center>
         </div>
       </div>
 
@@ -130,12 +166,23 @@
 
         <div id="level6-content" class="level-content">
           <h1><b>WHAT'S ON THE <font color="#78A334">SIXTH FLOOR?</font></b></h1>
-            <center>
-              <img id="level6-map" style="max-width: 800px;">
-            </center>
+          <center>
+            <section id="l6-m">
+              <div class="parent">
+                <div class="panzoom">
+                  <img id="level6-map" style="max-width: 800px;">
+                </div>
+              </div>
+              <div class="buttons">
+                <button class="zoom-in">Zoom In</button>
+                <button class="zoom-out">Zoom Out</button>
+                <input type="range" class="zoom-range">
+                <button class="reset">Reset</button>
+              </div>
+            </section>
+          </center>
         </div>
       </div>
-    </div>
 
     <div id="overlay"></div>
     <div id="level1-popup-store" class="popup">
@@ -160,6 +207,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script src="js/jquery.panzoom.js"></script>
   <script src="js/imagemapresizer.min.js"</script>
+  <script src="js/mapper.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="js/site.js"></script>
   <script>
@@ -179,7 +227,42 @@
   </script>
   <script>
     (function() {
-      var $section = $('section').first();
+      var $section = $('#l1-m');
+      $section.find('.panzoom').panzoom({
+        $zoomIn: $section.find(".zoom-in"),
+        $zoomOut: $section.find(".zoom-out"),
+        $zoomRange: $section.find(".zoom-range"),
+        $reset: $section.find(".reset")
+      });
+      $section = $('#l2-m');
+      $section.find('.panzoom').panzoom({
+        $zoomIn: $section.find(".zoom-in"),
+        $zoomOut: $section.find(".zoom-out"),
+        $zoomRange: $section.find(".zoom-range"),
+        $reset: $section.find(".reset")
+      });
+      $section = $('#l3-m');
+      $section.find('.panzoom').panzoom({
+        $zoomIn: $section.find(".zoom-in"),
+        $zoomOut: $section.find(".zoom-out"),
+        $zoomRange: $section.find(".zoom-range"),
+        $reset: $section.find(".reset")
+      });
+      $section = $('#l4-m');
+      $section.find('.panzoom').panzoom({
+        $zoomIn: $section.find(".zoom-in"),
+        $zoomOut: $section.find(".zoom-out"),
+        $zoomRange: $section.find(".zoom-range"),
+        $reset: $section.find(".reset")
+      });
+      $section = $('#l5-m');
+      $section.find('.panzoom').panzoom({
+        $zoomIn: $section.find(".zoom-in"),
+        $zoomOut: $section.find(".zoom-out"),
+        $zoomRange: $section.find(".zoom-range"),
+        $reset: $section.find(".reset")
+      });
+      $section = $('#l6-m');
       $section.find('.panzoom').panzoom({
         $zoomIn: $section.find(".zoom-in"),
         $zoomOut: $section.find(".zoom-out"),
