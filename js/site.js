@@ -14,7 +14,7 @@ $('.level-toggle').click(function() {
 });
 
 
-$('area').on('click', function() {
+$('area').on('click touchstart', function() {
   var name = $(this).attr('name');
 
   $('#overlay').fadeIn(300);
