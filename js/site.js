@@ -3,7 +3,11 @@ try {
   var hash = url.substring(url.indexOf('#') + 1);
   if (hash.length) {
     console.log(hash);
-    var content = $('#' + hash + '-content').slideDown(200);
+    var content = $('#' + hash + '-content').slideDown(200, function() {
+      $('html, body').animate({
+        scrollTop: $('#' + hash + '-content').offset().top
+      }, 600);
+    });
   }
 } catch (err) {}
 
